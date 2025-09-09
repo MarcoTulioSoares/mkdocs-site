@@ -24,10 +24,12 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: pip install mkdocs mkdocs-material mkdocs-git-revision-date-localized-plugin
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
       - name: Build the site
         run: mkdocs build --site-dir site
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./site
   deploy:
@@ -39,4 +41,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deploy
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
