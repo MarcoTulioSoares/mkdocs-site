@@ -1,0 +1,32 @@
+site_name: Documentação do Projeto
+site_description: Documentação com MkDocs e deploy automático no GitHub Pages
+site_url: https://MarcoTulioSoares.github.io/mkdocs-site
+repo_url: https://github.com/MarcoTulioSoares/mkdocs-site
+repo_name: MarcoTulioSoares/mkdocs-site
+
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+
+nav:
+  - Início: index.md
+  - Sobre: sobre.md
+  - Backlog: backlog.md
+  - Contribuindo: contribuindo.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
