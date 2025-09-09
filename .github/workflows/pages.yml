@@ -26,6 +26,8 @@ jobs:
         run: pip install mkdocs mkdocs-material mkdocs-git-revision-date-localized-plugin
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Build the site
         run: mkdocs build --site-dir site
       - name: Upload artifact
