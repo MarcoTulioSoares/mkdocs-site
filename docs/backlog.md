@@ -49,3 +49,15 @@
 | US08 | **Listagem de ferramentas** — Como equipe de compras, quero listar todas as ferramentas cadastradas para avaliar o portfólio da rede. | - GET `/api/FERRAMENTA` → 200 OK com lista de ferramentas.<br>- Cada item traz atributos + resumo da filial. |
 | US09 | **Cadastro de material de construção** — Como comprador corporativo, quero cadastrar um novo material vinculado a uma filial para ampliar as opções de venda. | - POST `/api/MATERIAL-CONSTRUCAO` completo → 201 Created com dados + filial resumida.<br>- Sem filial → 400 Bad Request.<br>- Filial inexistente → 404 Not Found. |
 | US10 | **Exclusão de material de construção** — Como gestor de estoque, quero remover um material que saiu de linha para manter o catálogo atualizado. | - DELETE `/api/MATERIAL-CONSTRUCAO/{id}` → 204 No Content.<br>- ID inexistente → 404 Not Found. |
+
+## História detalhada — Backend da loja de construção
+
+**Como** gerente de operações da rede de lojas de construção, **quero** administrar as filiais e seus estoques de materiais e ferramentas através da API REST do backend, **para** manter os dados consistentes em todas as unidades.
+
+### Critérios de aceitação
+
+- **Consulta de filiais**: chamadas `GET /api/FILIAL` e `GET /api/FILIAL/{id}` retornam respectivamente a lista de filiais e os detalhes de uma filial, incluindo o inventário agregado de ferramentas e materiais.
+- **Cadastro e atualização de filiais**: requisições `POST` e `PUT` validam a presença do nome e rejeitam tentativas de alterar o código primário existente, respondendo com **400 Bad Request** quando a regra é violada.
+- **Gestão de materiais de construção**: os endpoints de CRUD em `/api/MATERIAL-CONSTRUCAO` permitem criar, atualizar, listar e remover materiais vinculados a uma filial existente; vínculos ausentes ou inválidos produzem a resposta de erro apropriada.
+- **Gestão de ferramentas**: os endpoints de CRUD em `/api/FERRAMENTA` exigem filial válida para cada ferramenta; omissões ou referências inválidas geram erros de validação.
+- **Compatibilidade com front-end local**: quando o cliente é executado em `http://localhost:3000`, as requisições cross-origin são aceitas graças à configuração de CORS do backend.
