@@ -1,5 +1,5 @@
-site_name: Documentação do Projeto
-site_description: Documentação com MkDocs e deploy automático no GitHub Pages
+site_name: API Loja de Construção
+site_description: Documentação oficial da API Loja de Construção
 site_url: https://MarcoTulioSoares.github.io/mkdocs-site
 repo_url: https://github.com/MarcoTulioSoares/mkdocs-site
 repo_name: MarcoTulioSoares/mkdocs-site
@@ -15,8 +15,9 @@ theme:
     - content.code.copy
 
 nav:
-  - Início: index.md
-  - Sobre: sobre.md
+  - Visão Geral: index.md
+  - Arquitetura: sobre.md
+  - API REST: api.md
   - Backlog: backlog.md
   - Contribuindo: contribuindo.md
 

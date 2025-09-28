@@ -1,24 +1,38 @@
-# oCntribuindo
-Bem-vinde! Esta seção orienta como contribuir com este projeto.
+# Contribuindo
 
-## Fluxo de trabalho
+Bem-vinde! Esta seção orienta como colaborar com o backend e com esta documentação.
 
-1. Abra uma *issue* descrevendo o problema ou funcionalidade. Use os rótulos apropriados (`tipo:bug`, `tipo:feature`, etc.) e vincule-se a itens do backlog quando houver.
+## Fluxo de trabalho sugerido
+
+1. Abra uma issue descrevendo o problema ou a funcionalidade desejada. Use labels do backlog e vincule-se a itens existentes quando fizer sentido.
 2. Crie uma branch a partir de `main` com um nome descritivo, por exemplo:
-   - `feature/nova-funcionalidade`
-   - `bug/corrige-link-broken`
-   - `doc/ajusta-tutorial`
-3. Faça *commits* pequenos e com mensagens claras. Siga o padrão **imperativo** (ex.: `Adiciona página de contato`).
-4. Envie um *Pull Request* (PR) para `main`. No PR:
-   - Relacione a *issue* correspondente (ex.: "Closes #3").
-   - Descreva as mudanças realizadas.
-   - Marque revisores.
-5. Aguarde a revisão. Ajuste conforme os comentários.
-6. Depois de aprovado, o PR será mesclado. A automação de *deploy* publicará o site atualizado.
+   - `feature/cadastro-filial`
+   - `bugfix/corrige-validacao-ferramenta`
+   - `docs/atualiza-endpoints`
+3. Faça commits pequenos com mensagens no imperativo (ex.: `Ajusta validacao de filial`).
+4. Envie um Pull Request para `main` contendo:
+   - descrição das mudanças;
+   - referência para a issue relacionada (`Closes #ID`);
+   - evidências de testes executados (logs, prints, comandos).
+5. Aguarde a revisão, aplique ajustes solicitados e mantenha a branch atualizada com `main` quando necessário.
 
-## Boas práticas
+## Checklist antes de abrir PR
 
-- Mantenha a consistência do estilo e formatação.
-- Adicione testes ou exemplos quando possível.
-- Atualize a documentação em `docs/` e o `backlog.md` quando necessário.
-- Verifique se a pipeline de CI passa antes de solicitar revisão.
+- Executar `./mvnw test` (ou `mvnw.cmd test` no Windows) dentro de `springboot/demo`.
+- Rodar `docker compose up --build` localmente quando houver ajustes em infraestrutura.
+- Atualizar a documentação em `docs/` sempre que houver mudanças em endpoints ou contratos.
+- Garantir que o `mkdocs build` finalize sem erros.
+
+## Padrões de código e estilo
+
+- Utilize Lombok conforme já aplicado às entidades e DTOs, evitando duplicação de getters/setters.
+- Prefira lançar `ResponseStatusException` com mensagens claras em validações de negócio.
+- Mantenha os controllers enxutos, delegando regras para as classes de serviço.
+- Ao adicionar novas entidades, atualize `schema.sql` e revise a modelagem relacional.
+
+## Como sugerir melhorias na documentação
+
+1. Atualize ou crie arquivos em `docs/` utilizando Markdown e seguindo o tom adotado nas seções atuais.
+2. Rode `mkdocs serve` localmente para validar a navegação.
+3. Inclua capturas de tela ou exemplos de requisições quando relevante.
+4. Abra um PR específico para documentação com o label `tipo:doc`.
