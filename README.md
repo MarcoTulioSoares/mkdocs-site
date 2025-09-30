@@ -25,6 +25,35 @@ mkdocs serve
 
 Acesse em `http://127.0.0.1:8000`.
 
+### Como rodar o MkDocs no Windows
+
+1. Instale o Python:  
+   Baixe e instale o Python em https://www.python.org/downloads/windows/
+
+2. Instale o MkDocs e o tema Material:  
+   Abra o Prompt de Comando e execute:
+   ```
+   pip install mkdocs mkdocs-material
+   ```
+
+3. (Opcional) Instale plugins extras, se necessário:
+   ```
+   pip install mkdocs-material-extensions
+   ```
+
+4. Inicie o servidor local:
+   ```
+   mkdocs serve
+   ```
+   O site estará disponível em http://127.0.0.1:8000
+
+5. Para gerar os arquivos estáticos:
+   ```
+   mkdocs build
+   ```
+
+**Dica:** Execute os comandos na pasta onde está o arquivo `mkdocs.yml`.
+
 ### Deploy
 
 O deploy é realizado automaticamente por meio do GitHub Actions. Toda vez que houver um push na branch `main`, a documentação será construída e publicada em GitHub Pages.
