@@ -48,3 +48,11 @@ Antes de iniciar, configure as variáveis de ambiente `DB_HOST`, `DB_PORT`, `DB_
 - Consulte a página [API REST](api.md) para detalhes dos endpoints.
 - Acesse a seção [Arquitetura](sobre.md) para entender a organização do código e da base de dados.
 - Verifique o [backlog](backlog.md) para planejar evoluções do produto.
+
+## Diagrama UML
+
+Para uma visão mais visual da arquitetura e dos principais relacionamentos da aplicação, consulte o diagrama UML abaixo.
+
+<embed src="pdf/ProjetoUML2_pagina2.pdf" type="application/pdf" width="100%" height="600px" />
+
+Se preferir, [abra o diagrama em uma nova aba](pdf/ProjetoUML2_pagina2.pdf).
