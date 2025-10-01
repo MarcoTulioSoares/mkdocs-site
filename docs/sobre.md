@@ -39,3 +39,11 @@ As constraints `ON DELETE RESTRICT` evitam exclusão de filiais com itens associ
 - **FerramentaEntity** e **MaterialConstrucaoEntity** utilizam `@ManyToOne` para referenciar a filial e armazenam atributos específicos de cada item.
 
 Essa organização permite adicionar novas categorias de estoque ou integrações externas preservando a separação de responsabilidades e a rastreabilidade de dados.
+
+## Diagrama UML
+
+Para uma visão mais visual da arquitetura e dos principais relacionamentos da aplicação, consulte o diagrama UML abaixo.
+
+<embed src="pdf/ProjetoUML2_pagina2.pdf" type="application/pdf" width="100%" height="600px" />
+
+Se preferir, [abra o diagrama em uma nova aba](pdf/ProjetoUML2_pagina2.pdf).

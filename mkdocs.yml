@@ -20,6 +20,7 @@ nav:
   - API REST: api.md
   - Backlog: backlog.md
   - Contribuindo: contribuindo.md
+  - Prototipo: front.md
 
 plugins:
   - search

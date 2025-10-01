@@ -37,10 +37,4 @@ O backlog prioriza as entregas necessárias para manter e evoluir a API da Loja 
 - Adicionar autenticação/autorização para restringir o acesso à API.
 - Disponibilizar documentação OpenAPI gerada automaticamente a partir dos controllers.
 
-## Diagrama UML
 
-Para uma visão mais visual da arquitetura e dos principais relacionamentos da aplicação, consulte o diagrama UML abaixo.
-
-<embed src="pdf/ProjetoUML2_pagina2.pdf" type="application/pdf" width="100%" height="600px" />
-
-Se preferir, [abra o diagrama em uma nova aba](pdf/ProjetoUML2_pagina2.pdf).
